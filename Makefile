@@ -15,8 +15,8 @@ dl/%.jar: dl/%.zip
 
 extract-stamp: dl/gs-core-1.2.jar dl/gs-ui-1.2.jar Makefile
 	mkdir -p lib
-	cd lib && jar xf ../dl/gs-core-1.2.jar org
-	cd lib && jar xf ../dl/gs-ui-1.2.jar org
+	cd lib && jar xf ../dl/gs-core-1.2.jar
+	cd lib && jar xf ../dl/gs-ui-1.2.jar
 	touch extract-stamp
 
 #extract-stamp: dl/gs-core-1.2-sources.jar dl/gs-ui-1.2-sources.jar Makefile
@@ -26,4 +26,4 @@ extract-stamp: dl/gs-core-1.2.jar dl/gs-ui-1.2.jar Makefile
 #	touch extract-stamp
 
 clean:
-	rm -rf dl/* lib/org extract-stamp
+	rm -rf dl/* lib/* extract-stamp

@@ -3,5 +3,5 @@ org
 scala
 META-INF/maven
 /bin
-/lib/org
+/lib/*
 extract-stamp
