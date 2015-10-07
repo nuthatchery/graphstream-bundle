@@ -2,10 +2,10 @@
 all: extract-stamp
 
 dl/gs-core-1.2.zip:
-	cd dl && wget http://graphstream-project.org/media/data/gs-core-1.2.zip
+	cd dl && curl -O http://graphstream-project.org/media/data/gs-core-1.2.zip
 	
 dl/gs-ui-1.2.zip:
-	cd dl && wget http://graphstream-project.org/media/data/gs-ui-1.2.zip
+	cd dl && curl -O http://graphstream-project.org/media/data/gs-ui-1.2.zip
 	
 dl/%-sources.jar: dl/%.zip
 	unzip -jo $< $*/$*-sources.jar -d dl
