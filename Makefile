@@ -1,11 +1,14 @@
 
 all: extract-stamp
 
+CORE_URL=http://graphstream-project.org/media/data/gs-core-1.2.zip
+UI_URL=http://graphstream-project.org/media/data/gs-ui-1.2.zip
+
 dl/gs-core-1.2.zip:
-	cd dl && curl -O http://graphstream-project.org/media/data/gs-core-1.2.zip
+	cd dl && ( curl -O $(CORE_URL) || wget $(CORE_URL) )
 	
 dl/gs-ui-1.2.zip:
-	cd dl && curl -O http://graphstream-project.org/media/data/gs-ui-1.2.zip
+	cd dl && ( curl -O $(UI_URL) || wget $(UI_URL) )
 	
 dl/%-sources.jar: dl/%.zip
 	unzip -jo $< $*/$*-sources.jar -d dl
